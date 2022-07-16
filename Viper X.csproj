@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9E6C0D66-AAAB-428D-AE72-B8285B661509}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Viper X</RootNamespace>
+    <AssemblyName>Viper X</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Viper X.ico</ApplicationIcon>
+    <StartupObject>New_Viper_X.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DiscordRPC" />
+    <Reference Include="Guna.UI2" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json" />
+    <Reference Include="ScintillaNET" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\CustomTabControl.cs" />
+    <Compile Include="New_Viper_X\Injector.cs" />
+    <Compile Include="New_Viper_X\Interface\API.cs" />
+    <Compile Include="New_Viper_X\Interface\Data.cs" />
+    <Compile Include="New_Viper_X\Interface\Globals.cs" />
+    <Compile Include="New_Viper_X\Interface\Web.cs" />
+    <Compile Include="New_Viper_X\KeySys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New_Viper_X\KeySys.Designer.cs">
+      <DependentUpon>KeySys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New_Viper_X\Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New_Viper_X\Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New_Viper_X\Program.cs" />
+    <Compile Include="New_Viper_X\Properties\Resources.cs" />
+    <Compile Include="New_Viper_X\Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="New_Viper_X\Viper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New_Viper_X\Viper.Designer.cs">
+      <DependentUpon>Viper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New_Viper_X\Watcher\Process.cs" />
+    <Compile Include="New_Viper_X\Watcher\ProcessEventHandler.cs" />
+    <Compile Include="New_Viper_X\Watcher\ProcessWatcher.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="New_Viper_X\KeySys.resources" />
+    <EmbeddedResource Include="New_Viper_X\Loading.resources" />
+    <EmbeddedResource Include="New_Viper_X\Properties\Resources.resources" />
+    <EmbeddedResource Include="New_Viper_X\Viper.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="New_Viper_X\Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
